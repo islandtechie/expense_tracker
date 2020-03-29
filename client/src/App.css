@@ -1,38 +1,251 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+    height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-style: italic;
+  font-size: 1.8rem;
+}
+
+body {
+  background-image: url('assets/images/bkg1.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-color: rgb(15, 64, 95);
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.main-header {
+  background-color: rgb(15, 64, 95);
+  height: 50px;
+  box-shadow: 0px 0px 8px 1px black;
   display: flex;
-  flex-direction: column;
+}
+
+.main-header .main-nav,
+.main-header .user-controls {
+  display: flex;
   align-items: center;
+  width: 50%;
+}
+
+.main-header .user-controls {
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+
+
+.main-header .main-nav > a,
+.main-header .user-controls > a,
+.user-controls button  {
+  padding: 0 5px;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.user-controls button {
+  border:none;
+  background-color: transparent;
+}
+
+.user-controls button:hover {
+  cursor: pointer;
+}
+.container {
+  text-align: center;
+  width: 100%;
+}
+
+.landing-page {
+  box-shadow: 1px 7px 6px 1px black;
+  margin:35px auto 0 auto;
+  max-width: 950px;
+  width: 80vw;
+  height: 600px;
+  display: flex;
+}
+
+.app-info,
+.app-login {
+  width: 50%;
+}
+
+.app-info {
+  color: #fff;
+  font-weight: bold;
+  background-color: rgba(15, 64, 95,.7);
+}
+
+.app-info q {
+  display: block;
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 40px;
+  font-style: italic;
+  width: 400px;
+  font-size: 2.1rem;
+  
+}
+
+.app-info p {
+  font-size: 1.7rem;
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 480px;
+}
+
+.app-login {
+  background-color: rgba(255, 255, 255,.7);
+}
+
+.app-login h3 {
+  color: rgb(15,64,95);
+  font-size: 2.3rem;
+}
+
+.login-form {
+  margin-top: 10px;
+}
+
+.login-form input,
+.login-form button,
+.login-form-error input,
+.login-form-error button  {
+  background-color: rgba(15, 64, 95,.7);
+  color: #fff;
+  margin-bottom: 30px;
+  padding: 8px;
+  font-size: 1.7rem;
+  border: none;
+  width: 350px;
+  height: 80px;
+}
+
+.login-form button,
+.login-form-error button  {
+  background-color: rgb(15, 64, 95);
+}
+
+.login-form input::placeholder,
+.login-form-error input::placeholder {
+  color: #fff;
+}
+
+.login-form-error input {
+  border: 1px solid;
+  border-color: red;
+}
+
+.register-page {
+  box-shadow: 1px 7px 6px 1px black;
+  margin:35px auto 0 auto;
+  width: 500px;
+  height: 650px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+
+.register-page .login-form {
+  margin-top: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.register-page .login-form input,
+.register-page .login-form button {
+  margin-bottom: 10px;
+}
+
+.register-page .app-login {
+  width: 100%; 
+}
+
+.error {
+  color: red;
+  font-size: 1.2rem;
+}
+
+.expense-input,
+.expense-edit {
+  margin-top: 20px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expense-edit {
+  margin-top: 0px;
+}
+
+.expense-edit > form > input, 
+.expense-edit > form > button,
+.expense-input > form > input, 
+.expense-input > form > button {
+  width: 200px;
+  height: 40px;
+  border: none;
+  color: rgb(15, 64, 95);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.expense-edit > form > input,
+.expense-input > form > input {
+  border: 1px solid rgb(15, 64, 95);
+  padding: 0 5px;
+  margin-right: 5px;
+}
+
+.expense-edit > form > input:first-child,
+.expense-input > form > input:first-child {
+  border: 1px solid rgb(15, 64, 95);
+  width: 220px;
+}
+
+.expense-edit > form > button,
+.expense-input > form > button {
+  background-color: rgb(15, 64, 95);
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.expense-data {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.expense-data > table{
+  width: 1100px;
+  border-collapse: collapse;
+  font-size: 1.2rem;
+  background-color: whitesmoke;
+}
+
+.expense-data > table,
+.expense-data > table td {
+  border: 3px solid rgb(15, 64, 95);
 }
