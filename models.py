@@ -1,4 +1,7 @@
 from manage import db, app
+from datetime import datetime, date
+from werkzeug.security import generate_password_hash, check_password_hash
+import jwt
 
 class User(db.Model):
     __tablename__ = "user"
@@ -36,7 +39,7 @@ class User(db.Model):
         except Exception as e:
             return e
     
-    def decode_auth_token(auth_token):
+    def decode_auth_token(self, auth_token):
         try:
             payload = jwt.decode(auth_token, app.config.get('SECRET_KEY'))
             return payload['sub']
